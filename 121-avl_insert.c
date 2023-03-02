@@ -106,3 +106,22 @@ void adjust_balance(avl_t **root, avl_t *node)
 	}
 	*root = new_root;
 }
+
+/**
+ * avl_insert - Inserts a value into an AVL tree.
+ * @tree: A pointer to the address of the root node.
+ * @value: The value of the new node.
+ *
+ * Return: A pointer to the created node, otherwise NULL.
+ */
+avl_t *avl_insert(avl_t **tree, int value)
+{
+	avl_t *new_node = NULL;
+
+	if (tree != NULL)
+	{
+		new_node = bst_insert_helper(tree, value);
+		adjust_balance(tree, new_node);
+	}
+	return (new_node);
+}

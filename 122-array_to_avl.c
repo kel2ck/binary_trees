@@ -21,4 +21,3 @@ avl_t *array_to_avl(int *array, size_t size)
 	}
 	return (root);
 }
-
